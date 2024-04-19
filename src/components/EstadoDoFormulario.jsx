@@ -1,4 +1,5 @@
-import React, { useFormState } from "react-dom";
+'use client'
+import  { useFormState } from "react-dom";
 
 const EstadoDoFormulario = () => {
   const validarUsuario = (prevState, dadosDoFormulario) => {

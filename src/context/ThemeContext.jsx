@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+'use client'
 import { createContext, useState } from "react";
 
 // Criação do objeto de contexto

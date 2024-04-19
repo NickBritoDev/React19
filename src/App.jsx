@@ -1,3 +1,4 @@
+'use client'
 import "./App.css";
 import BotaoDeTema from "./components/BotaoDeTema";
 import EstadoDoFormulario from "./components/EstadoDoFormulario";

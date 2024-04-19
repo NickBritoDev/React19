@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+'use client'
+import  { useRef, useEffect } from "react";
 
 function AutoFocusInput() {
   const inputRef = useRef(null); // Criação da referência

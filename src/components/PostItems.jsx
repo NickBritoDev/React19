@@ -1,16 +1,27 @@
-import { use } from "react";
+'use client'
+import { useEffect, useState } from "react";
 
-const fetchPosts = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  return res.json();
+const fetchPosts = () => {
+  return fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json());
 };
-  
+
 const PostItems = () => {
-  const posts = use(fetchPosts());
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetchPosts()
+      .then(posts => {
+        setPosts(posts);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar os posts:', error);
+      });
+  }, []);
 
   return (
     <ul>
-      {posts.map((post) => (
+      {posts.map(post => (
         <div key={post.id}>
           <h3>{post.title}</h3>
           <p>{post.body}</p>
@@ -18,6 +29,6 @@ const PostItems = () => {
       ))}
     </ul>
   );
-}; 
+};
 
 export default PostItems;

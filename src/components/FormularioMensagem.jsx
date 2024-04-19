@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+'use client'
 import { useRef, useOptimistic } from "react";
 
 function FormularioMensagem({ messages, sendMessage }) {
